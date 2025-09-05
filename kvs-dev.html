@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KVS Global - Your Partner in Growth</title>
+    <!-- Use the Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Include Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles to ensure a professional look and feel */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fafc;
+        }
+        .section-title {
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #38a169; /* Green from the logo */
+            border-radius: 9999px;
+        }
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        /* Custom styles for the success message modal */
+        #success-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            display: none;
+        }
+    </style>
+</head>
+<body class="scroll-smooth">
+
+    <!-- Header & Navigation Bar -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo - Updated with a clean SVG for a more polished look -->
+            <a href="#hero" class="flex-shrink-0 text-2xl font-bold text-gray-900 flex items-center space-x-2">
+                <!--svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z" fill="#38a169"/>
+                    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-size="6" font-weight="bold" fill="#fff">KVS</text>
+                </svg-->
+                <img src="assets/images/KvsonlyIcon.png" alt="KVS Global Logo" class="h-[100px] w-[100px] object-contain">
+                <!--span class="text-5x1 font-bold text-gray-900"> KVS Global</span-->
+                <span class="text-4xl font-bold">
+                <span class="font-lexend text-black-600 font-bold">KVS</span>
+                <span class="text-blue-500">Global</span>
+                </span>
+                
+            </a>
+            
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 rounded-md p-2">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Desktop Navigation Links -->
+            <div class="hidden md:flex space-x-10">
+                <a href="#services" class="text-gray-600 hover:text-gray-900 font-bold transition duration-300">Services</a>
+                <a href="#about" class="text-gray-600 hover:text-gray-900 font-bold transition duration-300">About Us</a>
+                <a href="#contact" class="text-gray-600 hover:text-gray-900 font-bold transition duration-300">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Services</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">About Us</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="bg-gray-50 py-20 md:py-32">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+                    Innovating <span class="text-green-600">Growth</span>, Creating <span class="text-blue-600">Impact</span>
+                </h1>
+                <p class="mt-4 md:mt-6 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+                    KVS Global is your trusted partner, delivering integrated solutions across diverse sectors including Agriculture, Technology, Finance, and more.
+                </p>
+                <a href="#services" class="mt-8 inline-block px-8 py-3 bg-green-600 text-white font-bold rounded-full shadow-lg hover:bg-green-700 transition duration-300 transform hover:scale-105">
+                    Explore Our Services
+                </a>
+            </div>
+        </section>
+
+        <!-- Services Section - Updated to include all 11 services -->
+        <section id="services" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center section-title">Our Integrated Services</h2>
+                <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">
+                    We bring expertise from a wide range of industries to provide holistic solutions tailored to your needs.
+                </p>
+                <!-- Grid layout for the 11 service cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card: Agriculture & Farming -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 bg-green-100 rounded-full mb-4">
+                            <!-- Icon for Agriculture -->
+                            <svg class="h-8 w-8 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354c0-1.04-.84-1.884-1.884-1.884H4.884A1.884 1.884 0 003 4.354v15.292c0 1.04.84 1.884 1.884 1.884h5.232c1.044 0 1.884-.844 1.884-1.884V4.354zM21 4.354c0-1.04-.84-1.884-1.884-1.884h-5.232c-1.044 0-1.884.844-1.884 1.884v15.292c0 1.04.84 1.884 1.884 1.884h5.232c1.044 0 1.884-.844 1.884-1.884V4.354z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Agriculture & Farming</h3>
+                        <p class="text-gray-600">
+                            We deliver innovative farming solutions that improve productivity and sustainability.Our focus is on food security, 
+                            modern cultivation methods, and agri-business growth.Through technology-driven practices, we empower farmers and 
+                            strengthen global agriculture.
+                        </p>
+                    </div>
+
+                    <!-- Service Card: Clean & Renewable Energy -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 bg-orange-100 rounded-full mb-4">
+                            <!-- Icon for Clean & Renewable Energy (a sun) -->
+                            <svg class="h-8 w-8 text-orange-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Clean & Renewable Energy</h3>
+                        <p class="text-gray-600">
+                           We promotes green energy to reduce environmental impact and support sustainability.We invest in solar, wind, and 
+                           alternative energy technologies for long-term solutions.Our mission is to create cleaner, more efficient
+                            energy systems for the future.
+                        </p>
+                    </div>
+
+                    <!-- Service Card: Global Trade & Logistics -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 bg-blue-100 rounded-full mb-4">
+                            <!-- Icon for Trade -->
+                            <svg class="h-8 w-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9h-3m-1 9l-3-3m0 0l-3 3m3-3v8a1 1 0 01-1 1h-1a1 1 0 01-1-1v-8m2 1a3 3 0 11-6 0m6 0h-6" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Global Trade & Logistics</h3>
+                        <p class="text-gray-600">
+                            We facilitate seamless cross-border trade and international commerce.Our logistics expertise ensures efficiency, reliability, 
+                            and speed in global operations.With strong networks, we connect businesses to markets worldwide.
+                        </p>
+                    </div>
+
+                    <!-- Service Card: Information Technology & Digital Services-->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 bg-indigo-100 rounded-full mb-4">
+                            <!-- Icon for Information Technology & Digital Services -->
+                            <svg class="h-8 w-8 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h5.25v2H21v-2H13.5l-1-1L12 17H9.75zM15 15l-1-1h-2l-1 1L9 17h2.25v2h-1.5v-2H9.75M7.5 10H6M18 10h-2M12 10V8m0 4V6m0 8v-2" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Information Technology & Digital Services</h3>
+                        <p class="text-gray-600">
+                            We provide advanced IT infrastructure, software solutions, and digital transformation.Our expertise spans cloud platforms, 
+                            online ecosystems, and cybersecurity innovation.We drive innovation by integrating technology across industries.
+                        </p>
+                    </div>
+                                                  
+                    <!-- Service Card: E-commerce & Digital Marketing -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 bg-teal-100 rounded-full mb-4">
+                            <!-- Icon for E-commerce & Digital Marketing -->
+                            <svg class="h-8 w-8 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 3h6m-6 3h6M12 3v1m0 16v1m-9-9h1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 13h18M3 17h18M3 21h18" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">E-commerce & Digital Marketing</h3>
+                        <p class="text-gray-600">
+                            We offer seamless online shopping with trusted platforms. Our solutions bring quality products closer to customers.
+                            We focus on convenience, speed, and reliability.Together, we redefine the digital marketplace.
+                        </p>
+                    </div>
+
+                    <!-- Service Card: Education & Healthcare Innovation -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 bg-cyan-100 rounded-full mb-4">
+                            <!-- Education & Healthcare Innovation -->
+                            <svg class="h-8 w-8 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14v-2m0 0V8m0 4h.01M16 10H8m6 10a2 2 0 11-4 0h4zm-4 0V8" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2a10 10 0 100 20 10 10 0 000-20z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Education & Healthcare Innovation</h3>
+                        <p class="text-gray-600">
+                            We empower communities through accessible education and lifelong learning.Our healthcare solutions combine wellness, 
+                            medical services, and digital platforms.Together, we create opportunities for healthier, more knowledgeable societies.
+                        </p>
+                    </div>
+
+                    <!-- Service Card: Real Estate & Infrastructure Development -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 bg-red-100 rounded-full mb-4">
+                            <!-- Icon for Real Estate & Infrastructure Developmente -->
+                            <svg class="h-8 w-8 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m-6 0v-6a1 1 0 011-1h2a1 1 0 011 1v6" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Real Estate & Infrastructure Development</h3>
+                        <p class="text-gray-600">
+                            We builds value through residential, commercial, and industrial projects.We focus on modern design, sustainable development, 
+                            and smart infrastructure.Our projects strengthen communities while driving economic progress.
+                        </p>
+                    </div>
+                    
+                    <!-- Service Card: Financial & Investment Solutions -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 bg-yellow-100 rounded-full mb-4">
+                            <!-- Icon for Financial & Investment Solutions -->
+                            <svg class="h-8 w-8 text-yellow-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-2.761 0-5 2.239-5 5s2.239 5 5 5 5-2.239 5-5-2.239-5-5-5z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12h3M5 12h3M12 5V2M12 22v-3" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Financial & Investment Solutions</h3>
+                        <p class="text-gray-600">
+                            We deliver tailored financial services for businesses and individuals.Our portfolio includes fintech, digital payments, 
+                            banking, and investment strategies.By combining technology with finance, we help clients achieve long-term growth.
+                        </p>
+                    </div>           
+
+                    <!-- Service Card: Consulting, Media & Entertainment - Updated with a handshake icon -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 bg-fuchsia-100 rounded-full mb-4">
+                            <!-- Icon for Consulting, Media & Entertainment -->
+                            <svg class="h-8 w-8 text-fuchsia-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.314-2.686 6-6 6H4c-1.105 0-2 .895-2 2s.895 2 2 2h2c3.314 0 6-2.686 6-6M12 11c0 3.314 2.686 6 6 6h2c1.105 0 2-.895 2-2s-.895-2-2-2h-2c-3.314 0-6-2.686-6-6M9 9l-1 1" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-1-1" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Consulting, Media & Entertainment</h3>
+                        <p class="text-gray-600">
+                            We provide strategic advisory to help businesses grow and adapt to change.Our multimedia division delivers creative 
+                            content and digital storytelling.Through entertainment, we inspire and engage diverse global audiences.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold section-title">About KVS Global</h2>
+                <p class="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
+                    Founded on the principles of integrity and innovation, KVS Global is dedicated to fostering growth and success across a diverse portfolio of businesses. Our journey began with a simple mission: to build a company that not only excels in its core industries but also makes a meaningful contribution to the global community.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="p-4 rounded-xl">
+                        <h3 class="text-3xl font-bold text-green-600">5+</h3>
+                        <p class="text-gray-600 mt-2">Years of Experience</p>
+                    </div>
+                    <div class="p-4 rounded-xl">
+                        <h3 class="text-3xl font-bold text-blue-600">100+</h3>
+                        <p class="text-gray-600 mt-2">Satisfied Clients</p>
+                    </div>
+                    <div class="p-4 rounded-xl">
+                        <h3 class="text-3xl font-bold text-purple-600">4</h3>
+                        <p class="text-gray-600 mt-2">Core Business Verticals</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold section-title">Contact Us</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mb-8">
+                    Have a question or want to collaborate? Fill out the form below or reach out to us directly.
+                </p>
+                
+                <div class="max-w-lg mx-auto bg-gray-50 p-8 rounded-xl shadow-lg">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 text-left">Full Name</label>
+                            <input type="text" id="name" name="name" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 text-left">Email Address</label>
+                            <input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 text-left">Message</label>
+                            <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 px-6 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-300 transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Custom Modal for Success Message (replaces alert()) -->
+    <div id="success-modal" class="hidden fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+        <div class="bg-white p-8 rounded-xl shadow-2xl text-center max-w-sm mx-auto">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Message Sent!</h3>
+            <p class="text-gray-600 mb-6" id="modal-message-text"></p>
+            <button id="close-modal-button" class="px-6 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition">
+                Close
+            </button>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 KVS Global. All rights reserved.</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Facebook</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Twitter</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // JavaScript for form submission (to prevent default behavior and show a custom message)
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents the form from submitting and reloading the page
+            
+            const form = event.target;
+            const name = form.elements['name'].value;
+            const email = form.elements['email'].value;
+            const message = form.elements['message'].value;
+            
+            // In a real application, you would send this data to a server
+            console.log({
+                name: name,
+                email: email,
+                message: message
+            });
+
+            // Show the custom success modal with the user's name
+            const modal = document.getElementById('success-modal');
+            const modalMessage = document.getElementById('modal-message-text');
+            modalMessage.textContent = 'Thank you for your message, ' + name + '! We will get back to you soon.';
+            modal.style.display = 'flex'; // Make the modal visible
+        });
+
+        // Event listener to close the success modal
+        document.getElementById('close-modal-button').addEventListener('click', function() {
+            const modal = document.getElementById('success-modal');
+            modal.style.display = 'none'; // Hide the modal
+        });
+    </script>
+</body>
+</html>
